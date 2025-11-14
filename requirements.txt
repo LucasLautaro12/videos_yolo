@@ -1,0 +1,8 @@
+flask
+streamlit
+opencv-python
+ultralytics
+ffmpeg-python
+moviepy
+numpy
+pillow
