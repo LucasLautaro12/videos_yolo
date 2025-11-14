@@ -10,7 +10,7 @@ from utils import (
     timestamp_frame,
     yolo_model,       # cargado una sola vez en utils
 )
-from config import YOLO_MAP
+from app.config import YOLO_MAP
 from paralelo import procesar_en_paralelo
 
 

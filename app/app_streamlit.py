@@ -1,6 +1,6 @@
 import streamlit as st
 from pathlib import Path
-from config import UPLOAD_DIR, PROCESSED_DIR, YOLO_CLASSES, PAGE_TITLE, LOGO_PATH, ALLOWED_VIDEO_TYPES
+from app.config import UPLOAD_DIR, PROCESSED_DIR, YOLO_CLASSES, PAGE_TITLE, LOGO_PATH, ALLOWED_VIDEO_TYPES
 from processing import ejecutar_procesamiento
 from utils import asegurar_video_web, obtener_duracion_formato
 
@@ -155,7 +155,7 @@ def main():
                         if "todos" in opciones:
                             target_classes = None  # None = todas las clases
                         else:
-                            from config import YOLO_MAP
+                            from app.config import YOLO_MAP
                             target_classes = [YOLO_MAP[x] for x in opciones]
 
                         final_path_str, _ = ejecutar_procesamiento(

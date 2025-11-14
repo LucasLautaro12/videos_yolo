@@ -9,7 +9,7 @@ from pathlib import Path
 from skimage.metrics import structural_similarity as ssim
 from moviepy import VideoFileClip, concatenate_videoclips
 from ultralytics import YOLO
-from config import UPLOAD_DIR, PROCESSED_DIR, YOLO_MAP
+from app.config import UPLOAD_DIR, PROCESSED_DIR, YOLO_MAP
 
 # Cargar modelo YOLO una vez
 yolo_model = YOLO("yolov8m.pt")
