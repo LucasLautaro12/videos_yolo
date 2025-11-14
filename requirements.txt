@@ -28,6 +28,7 @@ ecdsa==0.19.1
 email-validator==2.3.0
 fastapi==0.120.1
 ffmpeg==1.4
+Flask==3.1.2
 fonttools==4.60.1
 frozenlist==1.8.0
 gitdb==4.0.12
@@ -53,6 +54,7 @@ hyperframe==6.1.0
 idna==3.10
 imageio==2.37.0
 imageio-ffmpeg==0.6.0
+itsdangerous==2.2.0
 Jinja2==3.1.6
 jsonschema==4.25.1
 jsonschema-specifications==2025.9.1
@@ -141,6 +143,7 @@ weasyprint==66.0
 webencodings==0.5.1
 websocket-client==1.9.0
 websockets==15.0.1
+Werkzeug==3.1.3
 wsproto==1.2.0
 yarl==1.22.0
 zopfli==0.4.0
