@@ -1,3 +1,5 @@
 import os
 
-os.system("streamlit run app/streamlit_app.py --server.port=8501")
+os.system("python -m streamlit run app/app_streamlit.py --server.port=8501")
+
+
