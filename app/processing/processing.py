@@ -4,14 +4,14 @@ import subprocess
 from pathlib import Path
 from skimage.metrics import structural_similarity as ssim
 
-from utils import (
+from app.utils.utils import (
     calcular_ssim_promedio,
     ajustar_umbral,
     timestamp_frame,
     yolo_model,       # cargado una sola vez en utils
 )
 from app.config import YOLO_MAP
-from paralelo import procesar_en_paralelo
+from app.utils.paralelo import procesar_en_paralelo
 
 
 def procesar_video(video_path, output_path, step=1, offset=0, target_classes=None):
