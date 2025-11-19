@@ -97,8 +97,7 @@ def procesar_video(video_path, output_path, step=1, offset=0, target_classes=Non
                     x1, y1, x2, y2 = map(int, box.xyxy[0])
                     label = yolo_model.names[cls_id]
                     cv2.rectangle(frame, (x1, y1), (x2, y2), (0, 255, 0), 2)
-                    cv2.putText(frame, label, (x1, y1 - 5),
-                                cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 255, 0), 2)
+                    cv2.putText(frame, label, (x1, y1 - 5), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 255, 0), 2)
                     hay_deteccion = True
         except Exception:
             hay_deteccion = False
