@@ -1,3 +1,4 @@
+#app_streamlit.py
 import streamlit as st
 from pathlib import Path
 from app.config import UPLOAD_DIR, PROCESSED_DIR, YOLO_CLASSES, PAGE_TITLE, LOGO_PATH, ALLOWED_VIDEO_TYPES

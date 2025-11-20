@@ -1,3 +1,4 @@
+#utils.py
 import cv2
 import numpy as np
 import time
@@ -144,3 +145,4 @@ def asegurar_video_web(input_path):
         raise Exception("Comando 'ffmpeg' no encontrado. Asegúrate de que FFmpeg esté instalado y en el PATH del sistema.")
     except subprocess.CalledProcessError as e:
         raise Exception(f"Error durante la conversión con FFmpeg: {e.stderr}")
+

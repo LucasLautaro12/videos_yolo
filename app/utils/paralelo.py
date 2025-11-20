@@ -1,4 +1,4 @@
-# paralelo.py
+# utils/paralelo.py
 import os
 import subprocess
 import shutil
@@ -51,7 +51,6 @@ def dividir_video(input_path, chunk_minutes=10, output_dir="chunks"):
 
     return chunk_paths
 
-
 def _tarea_procesar(args):
     """
     Ejecuta procesar_video sobre un chunk.
@@ -65,7 +64,6 @@ def _tarea_procesar(args):
     except Exception as e:
         print(f"❌ Chunk {idx:03d} falló: {e}")
         return None, 0
-
 
 def unir_videos(paths, output_path):
     """
@@ -85,7 +83,6 @@ def unir_videos(paths, output_path):
     subprocess.run(cmd, check=True)
     os.remove(list_file)
     return output_path
-
 
 def procesar_en_paralelo(func, input_path, output_path,
                          step=4, chunk_minutes=10, procesos=4, **kwargs):
