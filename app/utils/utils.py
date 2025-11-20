@@ -15,6 +15,7 @@ from app.config import UPLOAD_DIR, PROCESSED_DIR, YOLO_MAP
 # Cargar modelo YOLO una vez
 yolo_model = YOLO("yolov8m.pt")
 
+# Descarga un archivo de video desde una URL y lo guarda localmente
 def descargar_video(url, save_path):
     """Descarga un video desde URL"""
     with requests.get(url, stream=True) as r:
@@ -23,6 +24,7 @@ def descargar_video(url, save_path):
             for chunk in r.iter_content(chunk_size=8192):
                 f.write(chunk)
 
+# Calcula la duración del video en minutos
 def obtener_duracion_formato(video_path):
     """Devuelve duración HH:MM:SS y en minutos"""
     clip = VideoFileClip(video_path)
@@ -31,7 +33,6 @@ def obtener_duracion_formato(video_path):
     minutos = duracion_seg // 60
     segundos = duracion_seg % 60
     return f"{minutos:02d}:{segundos:02d}", duracion_seg / 60
-
 def obtener_resolucion_redimensionada(w, h, min_w=320, min_h=240):
     """Calcula resolución reducida proporcional"""
     target_w = min_w
@@ -41,7 +42,6 @@ def obtener_resolucion_redimensionada(w, h, min_w=320, min_h=240):
         new_w = int(w * (target_h / h))
         return new_w, target_h
     return target_w, new_h
-
 def calcular_ssim_promedio(video_path, step=4, max_frames=2000, frac=0.2):
     """Calcula SSIM promedio y std tomando una muestra limitada"""
 
@@ -127,6 +127,7 @@ def timestamp_frame(frame, segundos, prefix="Tiempo del video original: "):
 
     return frame
 
+# Convierte un video cualquiera en un video compatible para la web
 def asegurar_video_web(input_path):
     """
     Convierte un video a un formato compatible con navegadores web usando FFmpeg.
@@ -145,4 +146,6 @@ def asegurar_video_web(input_path):
         raise Exception("Comando 'ffmpeg' no encontrado. Asegúrate de que FFmpeg esté instalado y en el PATH del sistema.")
     except subprocess.CalledProcessError as e:
         raise Exception(f"Error durante la conversión con FFmpeg: {e.stderr}")
+
+
 

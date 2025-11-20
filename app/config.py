@@ -12,36 +12,30 @@ LOGO_PATH = STATIC_DIR / "Logo_MPA.png"
 UPLOAD_DIR.mkdir(exist_ok=True)
 PROCESSED_DIR.mkdir(exist_ok=True)
 
-
-# --- Configuración YOLO ---
-# Mapeo ID → Nombre (para detección)
 YOLO_MAP = {
-    0: "persona",
-    1: "bicicleta",
-    2: "auto",
-    3: "moto",
-    5: "colectivo",
-    7: "camión",
-    9: "semáforo",
-    15: "gato",
-    16: "perro",
-    17: "caballo",
-    24: "mochila",
-    62: "televisor",
-    63: "notebook",
-    64: "mouse",
-    66: "teclado",
-    67: "celular",
-    68: "microondas",
-    69: "horno",
-    70: "tostadora",
-    72: "heladera"
+    "persona": 0,
+    "bicicleta": 1,
+    "auto": 2,
+    "moto": 3,
+    "colectivo": 5,
+    "camión": 7,
+    "semáforo": 9,
+    "gato": 15,
+    "perro": 16,
+    "caballo": 17,
+    "mochila": 24,
+    "televisor": 62,
+    "notebook": 63,
+    "mouse": 64,
+    "teclado": 66,
+    "celular": 67,
+    "microondas": 68,
+    "horno": 69,
+    "tostadora": 70,
+    "heladera": 72
 }
 
-# Mapeo Nombre → ID (para filtros)
-YOLO_NAME_TO_ID = {v: k for k, v in YOLO_MAP.items()}
-
-YOLO_CLASSES = list(YOLO_MAP.values())
+YOLO_CLASSES = list(YOLO_MAP.keys())
 
 # --- Configuración App ---
 PAGE_TITLE = "Procesamiento Inteligente de Videos"
